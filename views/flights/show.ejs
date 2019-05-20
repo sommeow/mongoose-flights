@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mongoose Flights</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Flight Details</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Airline</th>
+          <th>Flight Number</th>
+          <th>Departs</th>
+          <th>Departure Airport</th>
+          <th>Destination Airport</th>
+          <th>Arrival</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= flight.airline %></td>
+          <td><%= flight.flightNo %></td>
+          <td><%= flight.departs %></td>
+          <td><%= flight.airport %></td>
+          <td><%= flight.destinations.airport %></td>
+          <td><%= flight.destinations.arrival %></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Destination</h2>
+    <table>
+      <form action="/flights" method="POST">
+        <label>Destination Airport:
+            <select name="airport">
+              <option value="AUS">AUS</option>
+              <option value="DAL">DAL</option>
+              <option value="LAX">LAX</option>
+              <option value="SEA">SEA</option>
+            </select>
+        </label><br>
+        <label>Arrival:
+          <input type="date" name="arrival">
+        </label><br>
+        <input type="submit" value="Add Destination Details">
+    </table>
+
+    <h4><a href="/flights">View Flights</a></h4>
+    <h4><a href="/flights/new">Add New Flight</a></h4>
+  </body>
+</html>
