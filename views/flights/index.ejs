@@ -1,40 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+<html>
+  <head>
     <title>Mongoose Flights</title>
-</head>
-<body>
-    <h1>Flights</h1>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h2>All Flights</h2>
     <table>
-        <thead>
-            <tr>
-                <th>Airline</th>
-                <th>Flight No.</th>
-                <th>Departure</th>
-                <th>Departure Airport</th>
-                <th>Destination Airport</th>
-                <th>Arrival</th>
-            </tr>
-        </thead>
-        <tbody>
-          <% flights.forEach(function(f) { %>
-            <tr>
-                <td><%= f.airline %></td>
-                <td><%= f.flightNo %></td>
-                <td><%= f.departs %></td>
-                <td><%= f.airport %></td>
-                <td><%= f.destinations.airport %></td>
-                <td><%= f.destinations.arrival %></td>
-                <td><a href ="/flights/<%= f._id %>">DETAILS</a></td>
-                
-            </tr>
-          <% }); %>
-        </tbody>
+      <thead>
+        <tr>
+          <th>Airline</th>
+          <th>Flight Number</th>
+          <th>Departs</th>
+          <th>Departure Airport</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% flights.forEach(function(f) { %>
+          <tr>
+            <td><%= f.airline %></td>
+            <td><%= f.flightNo %></td>
+            <td><%= f.departs %></td>
+            <td><%= f.airport %></td>
+            <td><a href="/flights/<%= f._id %>">Details</a></td>
+          </tr>
+          <% }) %>
+      </tbody>
     </table>
-    <h4><a href="/flights/new">Add New Flight</a></h4>
-</body>
+    <h4><a href="/flights/new">Add new flight</a></h4>
+  </body>
 </html>

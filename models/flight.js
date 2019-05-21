@@ -42,7 +42,3 @@ var flightSchema = new Schema({
 
 
 module.exports = mongoose.model('Flight', flightSchema);
-
-function deleteOne(id) {
-    flights.splice(id, 1);
-}
